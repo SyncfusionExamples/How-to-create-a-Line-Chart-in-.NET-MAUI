@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Charts.ViewModel
+namespace LineChartDemo.ViewModel
 {
     public class ViewModel
     {
