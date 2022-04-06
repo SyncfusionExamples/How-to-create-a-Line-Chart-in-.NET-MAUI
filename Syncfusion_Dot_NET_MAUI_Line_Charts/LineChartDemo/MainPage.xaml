@@ -1,8 +1,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Charts.MainPage"
+             x:Class="LineChartDemo.MainPage"
              xmlns:chart="clr-namespace:Syncfusion.Maui.Charts;assembly=Syncfusion.Maui.Charts" 
-             xmlns:viewModel ="clr-namespace:Charts.ViewModel"
+             xmlns:viewModel ="clr-namespace:LineChartDemo.ViewModel"
              BackgroundColor="{DynamicResource PageBackgroundColor}">
 
     <Grid HorizontalOptions="FillAndExpand" Padding="20" BackgroundColor="White" VerticalOptions="FillAndExpand">
@@ -13,14 +13,14 @@
             <chart:SfCartesianChart.Title>
                 <Label Text="Annual rainfall of Paris" FontSize="Large" Margin="5,10,5,10" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand"></Label>
             </chart:SfCartesianChart.Title>
-            <chart:SfCartesianChart.PrimaryAxis>
+            <chart:SfCartesianChart.XAxes>
                 <chart:CategoryAxis/>
-            </chart:SfCartesianChart.PrimaryAxis>
-            <chart:SfCartesianChart.SecondaryAxis>
+            </chart:SfCartesianChart.XAxes>
+            <chart:SfCartesianChart.YAxes>
                 <chart:NumericalAxis Interval="40"/>
-            </chart:SfCartesianChart.SecondaryAxis>
+            </chart:SfCartesianChart.YAxes>
             <chart:SfCartesianChart.Series>
-                <chart:LineSeries ItemsSource="{Binding Data}" ShowDataLabels="True" Background="#314A6E"
+                <chart:LineSeries ItemsSource="{Binding Data}" ShowDataLabels="True" Fill="#314A6E"
                                     XBindingPath="Year" 
                                     YBindingPath="Counts">
                 </chart:LineSeries>

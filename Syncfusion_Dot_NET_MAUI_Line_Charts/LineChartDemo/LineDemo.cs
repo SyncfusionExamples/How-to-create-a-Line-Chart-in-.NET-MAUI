@@ -4,7 +4,7 @@ using Microsoft.Maui.Controls;
 using Microsoft.Maui.Graphics;
 using Syncfusion.Maui.Charts;
 
-namespace Charts
+namespace LineChartDemo
 {
     public class LineDemo : ContentPage
     {
@@ -15,11 +15,11 @@ namespace Charts
 
 			//Initializing Primary Axis
 			CategoryAxis primaryAxis = new CategoryAxis();
-			chart.PrimaryAxis = primaryAxis;
+			chart.XAxes.Add(primaryAxis);
 
 			//Initializing Secondary Axis
 			NumericalAxis secondaryAxis = new NumericalAxis();
-			chart.SecondaryAxis = secondaryAxis;
+			chart.YAxes.Add(secondaryAxis);
 
 			//Initialize series
 			var binding = new Binding() { Path = "Data" };
@@ -28,7 +28,7 @@ namespace Charts
 				XBindingPath = "Year",
 				YBindingPath = "Counts",
 				ShowDataLabels = true,
-				Background = new SolidColorBrush(Color.FromArgb("#314A6E")),
+				Fill = new SolidColorBrush(Color.FromArgb("#314A6E")),
 			};
 
 			lineSeries.SetBinding(ChartSeries.ItemsSourceProperty, binding);
@@ -37,7 +37,7 @@ namespace Charts
 			//Chart title
 			var title = new Label()
 			{
-				HorizontalOptions = LayoutOptions.FillAndExpand,
+				HorizontalOptions = LayoutOptions.Fill,
 				HorizontalTextAlignment = Microsoft.Maui.TextAlignment.Center,
 				Text = "Annual rainfall of Paris",
 				FontSize = 16,
@@ -47,8 +47,8 @@ namespace Charts
 
 			var grid = new Grid() 
 			{ 
-				HorizontalOptions = LayoutOptions.FillAndExpand,
-				VerticalOptions = LayoutOptions.FillAndExpand,
+				HorizontalOptions = LayoutOptions.Fill,
+				VerticalOptions = LayoutOptions.Fill,
 				Padding = new Microsoft.Maui.Thickness(20),
 			};
 

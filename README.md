@@ -18,21 +18,22 @@ xmlns:chart="clr-namespace:Syncfusion.Maui.Charts;assembly=Syncfusion.Maui.Chart
 ```
 using Syncfusion.Maui.Charts;
 ```
-Initialize an empty chart with PrimaryAxis and SecondaryAxis as shown below,
+Initialize an empty chart with XAxes and YAxes as shown below,
 
 **[XAML]**
 ```
 <chart:SfCartesianChart>
 
-    <chart:SfCartesianChart.PrimaryAxis>
+    <chart:SfCartesianChart.XAxes>
         <chart:CategoryAxis/>
-    </chart:SfCartesianChart.PrimaryAxis>
+    </chart:SfCartesianChart.XAxes >
 
-    <chart:SfCartesianChart.SecondaryAxis>
+    <chart:SfCartesianChart.YAxes>
         <chart:NumericalAxis/>
-    </chart:SfCartesianChart.SecondaryAxis>
+    </chart:SfCartesianChart.YAxes>
 
 </chart:SfCartesianChart>
+
 ```
 **[C#]**
 ```
@@ -41,14 +42,15 @@ SfCartesianChart chart = new SfCartesianChart();
 //Initializing Primary Axis
 CategoryAxis primaryAxis = new CategoryAxis();
 
-chart.PrimaryAxis = primaryAxis;
+chart.XAxes.Add(primaryAxis);
 
 //Initializing Secondary Axis
 NumericalAxis secondaryAxis = new NumericalAxis();
 
-chart.SecondaryAxis = secondaryAxis;
+chart.YAxes.Add(secondaryAxis);
 
 this.Content = chart;
+
 ```
 ### Initialize view model
 
@@ -146,7 +148,7 @@ LineSeries lineSeries = new LineSeries()
 {
 	XBindingPath = "Year",
 	YBindingPath = "Counts",
-              ShowDataLabels = true
+        ShowDataLabels = true
 };
 
 LineSeries.SetBinding(ChartSeries.ItemsSourceProperty, binding);
