@@ -89,7 +89,7 @@ public class ViewModel
     }
 }
 ```
-Set the ViewModel instance as the BindingContext of chart; this is done to bind properties of ViewModel to SfCartesianChart.
+Set the **ViewModel** instance as the **BindingContext** of chart; this is done to bind properties of **ViewModel** to SfCartesianChart.
 
 > **Note:** Add namespace of ViewModel class in your XAML page if you prefer to set BindingContext in XAML.
 
@@ -108,14 +108,14 @@ Set the ViewModel instance as the BindingContext of chart; this is done to bind 
 ```
 **[C#]**
 ```
-  SfCartesianChart chart = new SfCartesianChart();
+SfCartesianChart chart = new SfCartesianChart();
 chart.BindingContext = new ViewModel();
 ```
 ### How to populate data in .NET MAUI Line Charts
 
-As we are going to visualize the comparison of annual rainfall in the data model, add LineSeries to SfCartesianChart.Series property, and then bind the Data property of the above ViewModel to the LineSeries.ItemsSource property as shown below.
+As we are going to visualize the comparison of annual rainfall in the data model, add [LineSeries](https://help.syncfusion.com/cr/maui/Syncfusion.Maui.Charts.LineSeries.html?tabs=tabid-1) to [SfCartesianChart.Series](https://help.syncfusion.com/cr/maui/Syncfusion.Maui.Charts.SfCartesianChart.html#Syncfusion_Maui_Charts_SfCartesianChart_Series) property, and then bind the Data property of the above ViewModel to the [LineSeries.ItemsSource](https://help.syncfusion.com/cr/maui/Syncfusion.Maui.Charts.ChartSeries.html?&_ga=2.202111828.471182244.1634019879-255829655.1613129491#Syncfusion_Maui_Charts_ChartSeries_ItemsSource) property as shown below.
   
-> Note: Need to set XBindingPath and YBindingPath properties, so that series would fetch values from the respective properties in the data model to plot the series.
+> **Note:** Need to set [XBindingPath](https://help.syncfusion.com/cr/maui/Syncfusion.Maui.Charts.ChartSeries.html#Syncfusion_Maui_Charts_ChartSeries_XBindingPath) and [YBindingPath](https://help.syncfusion.com/cr/maui/Syncfusion.Maui.Charts.XYDataSeries.html#Syncfusion_Maui_Charts_XYDataSeries_YBindingPath) properties, so that series would fetch values from the respective properties in the data model to plot the series.
 
 **[XAML]**
   ```
